@@ -15,7 +15,7 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="main.css">
+    
 
   </head>
 
@@ -27,11 +27,11 @@
     <!-- Page Content -->
     <div class="container">
       
-      <div class="row">
+      <div class="col-lg-12">
 
-        <div class="col-lg-12 text-left">
+        <div class="text-left">
           <h1 class="mt-5">CS460 HW1 Portfolio</h1>
-          <p>This is my CS460 Portfolio, simply is better</p>
+          <p>Yumin Chen, CS460, HW#1</p>
           <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
              <div class="btn-group" role="group">
              <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -48,11 +48,14 @@
           <h6 class="mt-3">HW1 Github click <a href="https://github.com/yumin-cs460/cs460hw1">HERE</a></h6>
           <h6>HW1 Demo click <a href="http://www.wou.edu/~ychen13/cs460/hw1/index.html">HERE</a></h6>
           
+          
+        </div>
+        <div class="text-left">
           <h3 class="mt-5">Git Setup</h3>
             
-          <p>After download and install git, first thing I initial repository and addand commit my stuff. To able code remotely, I also push it to my github. Code below show my steps:</p>
+          <p>After download and install git, first thing I initial repository and then start "add" and "commit" my stuffs. To able code remotely, I also push it to my github. Code below show my steps:</p>
           <div class="language-bash highlighter-rouge">
-            <div class="highlight">
+            <div id="codebox" class="highlight">
              <pre class="hightlight">
                <code>
                  git init          
@@ -64,17 +67,119 @@
              </pre>  
             </div> 
           </div>    
-          <p>When I need to access and change my code remotely, I clone the  repository to my local machine. Code below show the step:</p>
+          <p>When I need to access and change my code remotely, I clone the repository to my local machine. Code below show the step:</p>
           <div class="language-bash highlighter-rouge">
             <div class="highlight">
              <pre class="hightlight">
                <code>
-                 git clone https://github.com/yumin-cs460/cs460hw1.git
+                 git clone https://github.com/XXX/XXX.git
                </code>
              </pre>  
             </div> 
           </div>
-          
+            
+        </div>
+        <div class="text-left">
+          <h3 class="mt-5">Bootstrap Setup</h3>
+            
+          <p>I choose to save the bootstrap to local, code below show how I apply it to my page:</p>
+          <div class="language-html highlighter-rouge">
+            <div class="highlight">
+             <pre class="hightlight">
+               <code>
+                 &lt;!-- Bootstrap core CSS --&gt
+                 &lt;link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt
+                 &lt;!-- Bootstrap core JavaScript --&gt
+                 &lt;script src="vendor/jquery/jquery.min.js">&lt;/script&gt
+                 &lt;script src="vendor/bootstrap/js/bootstrap.bundle.min.js"&gt&lt;/script&gt
+                 &lt;link rel="stylesheet" type="text/css" href="main.css"&gt
+               </code>
+             </pre>  
+            </div> 
+          </div> 
+            
+          <h3 class="mt-5">Navigation Bar</h3>
+          <p>Use &lt;nav&gt and &lt;button&gt element to create navigation bar and button for navigating to different page. Code show the steps:</p>
+          <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+             <pre class="hightlight">
+               <code>
+                 &lt;!-- Navigation --&gt
+                 &lt;nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top"&gt
+                   &lt;div class="container"&gt
+                     &lt;a class="navbar-brand" href="index.html"&gtYumin Chen&lt;/a&gt
+                     &lt;button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"&gt
+                       &lt;span class="navbar-toggler-icon"&gt&lt;/span&gt
+                       &lt;/button&gt
+                          &lt;div class="collapse navbar-collapse" id="navbarResponsive"&gt
+                            &lt;ul class="navbar-nav ml-auto"&gt
+                            &lt;li class="nav-item active"&gt
+                            &lt;a class="nav-link" href="#"&gtHome
+                          &lt;span class="sr-only"&gt(current)&lt;/span&gt
+                             &lt;/a&gt
+                             &lt;/li&gt
+                             &lt;li class="nav-item"&gt
+                        &lt;a class="nav-link" href="page2.html"&gtPicture&lt;/a&gt
+                       &lt;/li&gt
+                     &lt;/ul&gt
+                   &lt;/div&gt
+                  &lt;/div&gt
+                 &lt;/nav&gt
+               </code>
+             </pre>  
+            </div> 
+          </div>
+            
+          <h3 class="mt-5">Content</h3>
+          <p>I use &lt;row&gt and &lt;col-lg-12&gt to make organized horizontal groups and limited the border. Code below the basic steps:</p>
+          <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+             <pre class="hightlight">
+               <code>
+                 &lt;div class="container"&gt
+                   &lt;div class="row"&gt
+                     &lt;div class="col-lg-12"&gt
+                        ...  
+                     &lt;/div&gt
+                     &lt;div class="col-lg-12"&gt
+                        ...
+                     &lt;/div&gt
+                   &lt;/div&gt
+                 &lt;/div&gt
+               </code>
+             </pre>  
+            </div> 
+          </div> 
+            
+            
+          <h3 class="mt-5">Custom CSS</h3>
+          <p>To able to let both of pages to use external custom CSS file, those pages will need to make a declaration so the custom CSS  can effect. Code show the steps:</p>
+          <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+             <pre class="hightlight">
+               <code>
+                &lt;link rel="stylesheet" type="text/css" href="layout.css"&gt;
+               </code>
+             </pre>  
+            </div> 
+          </div> 
+          <p>And then the external CSS can start adust the pages:</p>
+          <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+             <pre class="hightlight">
+               <code>
+                h1, h2, h3, h4, h5, h6 {
+                     font-size: 150%;
+                }
+
+                ul, ol {
+                     list-style: upper-roman;
+                }
+               </code>
+             </pre>  
+            </div> 
+          </div>     
+            
         </div>
           
       </div>
