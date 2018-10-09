@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="CS460 HW2">
+    <meta name="author" content="YuminChen">
+
+    <title>HW2 Demo</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core JavaScript -->
+    <!--script src="vendor/jquery/jquery.min.js"></script-->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+      
+  </head>
+
+  <body>
+
+    
+
+    <!-- Page Content -->
+    <div class="container">
+      <div class="row">
+        <div class="lead col-lg-12 alert alert-primary mt-2" role="alert">
+          This is the demo page for CS460 HW2
+        </div>
+        <div class="col-lg-10">
+          <form id="ipInfo">
+            <fieldset>
+                <legend>IP </legend>
+                IP: <input type="text" id="ip1">.
+                <input type="text" id="ip2">.
+                <input type="text" id="ip3">.
+                <input type="text" id="ip4"><br>
+                <br>
+                Network Mask: /<input type="text" id="mask">(i.e. 24)<br>
+                <br />
+                <input type="submit" value="Show" />
+                <br />
+            </fieldset>
+          </form>
+            
+          <div id="resultReturn">
+			       <!-- JS Result to Here -->
+		      </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="hw2.js"></script>
+  </body>
+
+</html>
