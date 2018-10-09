@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>HW1 Demo</title>
+    <title>HW2 Demo</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,8 +30,8 @@
       <div class="col-lg-12">
 
         <div class="text-left">
-          <h1 class="mt-5">CS460 HW1 Portfolio</h1>
-          <p>Yumin Chen, CS460, HW#1</p>
+          <h1 class="mt-5">CS460 HW2 Portfolio</h1>
+          <p>Yumin Chen, CS460, HW#2</p>
           <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
              <div class="btn-group" role="group">
              <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -45,35 +45,37 @@
              </div>
               
           </div>
-          <p class="mt-4">This is a small blog for my summer project, there are some table, list and picture to show the details. The pages was only using HTML, CSS and Bootstrap.</p>
-          <h6 class="mt-3">HW1 Github click <a href="https://github.com/yumin-cs460/cs460hw1">HERE</a></h6>
-          <h6>HW1 Demo click <a href="http://www.wou.edu/~ychen13/cs460/hw1/index.html">HERE</a></h6>
+          <p class="mt-4">This is a IP Calculator, return some useful information for network engineer. This program is write by JS and HTML with jQuery</p>
+          <h6 class="mt-3">HW2 Github click <a href="https://github.com/yumin-cs460/cs460">HERE</a></h6>
+          <h6>HW2 Demo click <a href="https://yumin-cs460.github.io/hw2/index.html">HERE</a></h6>
           
           
         </div>
         <div class="text-left">
-          <h3 class="mt-5">Git Setup</h3>
+          <h3 class="mt-5">Git Branch</h3>
             
-          <p>After download and install git, first thing I initial repository and then start "add" and "commit" my stuffs. To able code remotely, I also push it to my github. Code below show my steps:</p>
+          <p>For this HW, all the codes is in different branch and will be merge when finish, follow code show how to create and shift to different branch:</p>
           <div class="language-bash highlighter-rouge">
             <div id="codebox" class="highlight">
              <pre class="hightlight">
                <code>
-                 git init          
-                 git add .
+                 git clone https://github.com/xxx/xxx.git
+                 git branch hw2_js          
+                 git checkout hw2_js
+                 git add hw2
                  git commit -m "XXXX"
-                 git remote add origin https://github.com/xxx/xxx.git
-                 git push origin master
+                 git push origin hw2_js
                </code>
              </pre>  
             </div> 
           </div>    
-          <p>When I need to access and change my code remotely, I clone the repository to my local machine. Code below show the step:</p>
+          <p>Aso user follow code to view your remote branch and checkout the branch:</p>
           <div class="language-bash highlighter-rouge">
             <div class="highlight">
              <pre class="hightlight">
                <code>
-                 git clone https://github.com/XXX/XXX.git
+                  git branch -a  
+                  git checkout hw2_js
                </code>
              </pre>  
             </div> 
@@ -81,26 +83,34 @@
             
         </div>
         <div class="text-left">
-          <h3 class="mt-5">Bootstrap Setup</h3>
+          <h3 class="mt-5">HTML Design</h3>
             
-          <p>I choose to save the bootstrap to local, code below show how I apply it to my page:</p>
+          <p>My calculator require a input from user so I need something on page to let user input the IP and network mask, the code below show the steps:</p>
           <div class="language-html highlighter-rouge">
             <div class="highlight">
              <pre class="hightlight">
                <code>
-                 &lt;!-- Bootstrap core CSS --&gt
-                 &lt;link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt
-                 &lt;!-- Bootstrap core JavaScript --&gt
-                 &lt;script src="vendor/jquery/jquery.min.js">&lt;/script&gt
-                 &lt;script src="vendor/bootstrap/js/bootstrap.bundle.min.js"&gt&lt;/script&gt
-                 &lt;link rel="stylesheet" type="text/css" href="main.css"&gt
+                  &lt;form id="ipInfo"&gt
+                  &lt;fieldset&gt
+                     &lt;legend&gtIP &lt;/legend&gt
+                          IP: &lt;input type="text" id="ip1"&gt.
+                          &lt;input type="text" id="ip2"&gt.
+                          &lt;input type="text" id="ip3"&gt.
+                          &lt;input type="text" id="ip4">&lt;br&gt
+                          &lt;br&gt
+                          Network Mask: /&lt;input type="text" id="mask">(i.e. 24)&lt;br&gt
+                          &lt;br /&gt
+                          &lt;input type="submit" value="Show" /&gt
+                          &lt;br /&gt
+                    &lt;/fieldset>
+                   &lt;/form>
                </code>
              </pre>  
             </div> 
           </div> 
             
-          <h3 class="mt-5">Navigation Bar</h3>
-          <p>Use &lt;nav&gt and &lt;button&gt element to create navigation bar and button for navigating to different page. Code show the steps:</p>
+          <h3 class="mt-5">Interaction between HTMl and JS</h3>
+          <p>Sometime</p>
           <div class="language-bash highlighter-rouge">
             <div class="highlight">
              <pre class="hightlight">
