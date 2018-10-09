@@ -109,87 +109,67 @@
             </div> 
           </div> 
             
-          <h3 class="mt-5">Interaction between HTMl and JS</h3>
-          <p>Sometime</p>
+          <h3 class="mt-5">Interaction between HTMl, JS and jQuery</h3>
+          <p>By operating the DOM, I am able to catch user input for calculation and updated the result and return as HTML. The code below show how I catch the network mask and return result: </p>
           <div class="language-bash highlighter-rouge">
             <div class="highlight">
              <pre class="hightlight">
                <code>
-                 &lt;!-- Navigation --&gt
-                 &lt;nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top"&gt
-                   &lt;div class="container"&gt
-                     &lt;a class="navbar-brand" href="index.html"&gtYumin Chen&lt;/a&gt
-                     &lt;button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"&gt
-                       &lt;span class="navbar-toggler-icon"&gt&lt;/span&gt
-                       &lt;/button&gt
-                          &lt;div class="collapse navbar-collapse" id="navbarResponsive"&gt
-                            &lt;ul class="navbar-nav ml-auto"&gt
-                            &lt;li class="nav-item active"&gt
-                            &lt;a class="nav-link" href="#"&gtHome
-                          &lt;span class="sr-only"&gt(current)&lt;/span&gt
-                             &lt;/a&gt
-                             &lt;/li&gt
-                             &lt;li class="nav-item"&gt
-                        &lt;a class="nav-link" href="page2.html"&gtPicture&lt;/a&gt
-                       &lt;/li&gt
-                     &lt;/ul&gt
-                   &lt;/div&gt
-                  &lt;/div&gt
-                 &lt;/nav&gt
+                Catch:
+                  Network Mask: /&lt;input type="text" id="mask">(i.e. 24)      //HTML network mask input text
+                  ...
+                  var mask = $('#mask').val().trim();         //jQuery style DOM operation
+
+                Update:
+                  &lt;div id="resultReturn">                     //UI side, where result will display
+                     &lt;!-- JS Result to Here -->
+                  &lt;/div>
+
+                  $('#resultReturn').html(                    //JS side, return to UI
+                    '&lt;h5 class="mt-5"> XXX &lt;/h5>'
+                  );
                </code>
              </pre>  
             </div> 
           </div>
             
           <h3 class="mt-5">Content</h3>
-          <p>I use &lt;row&gt and &lt;col-lg-12&gt to make organized horizontal groups and limited the border. Code below the basic steps:</p>
+          <p>The general idea is convert the network mask to wilcard and then calculate the max available ip address. Follow show basic calculation:</p>
           <div class="language-bash highlighter-rouge">
             <div class="highlight">
              <pre class="hightlight">
                <code>
-                 &lt;div class="container"&gt
-                   &lt;div class="row"&gt
-                     &lt;div class="col-lg-12"&gt
-                        ...  
-                     &lt;/div&gt
-                     &lt;div class="col-lg-12"&gt
-                        ...
-                     &lt;/div&gt
-                   &lt;/div&gt
-                 &lt;/div&gt
-               </code>
-             </pre>  
-            </div> 
-          </div> 
-            
-            
-          <h3 class="mt-5">Custom CSS</h3>
-          <p>To able to let both of pages to use external custom CSS file, those pages will need to make a declaration so the custom CSS  can effect. Code show the steps:</p>
-          <div class="language-bash highlighter-rouge">
-            <div class="highlight">
-             <pre class="hightlight">
-               <code>
-                &lt;link rel="stylesheet" type="text/css" href="layout.css"&gt;
-               </code>
-             </pre>  
-            </div> 
-          </div> 
-          <p>And then the external CSS can start adust the pages:</p>
-          <div class="language-bash highlighter-rouge">
-            <div class="highlight">
-             <pre class="hightlight">
-               <code>
-                h1, h2, h3, h4, h5, h6 {
-                     font-size: 150%;
-                }
+                 IP:   192.168.1.0      11000000.10101000.00000001.00000000
+                 Mask: 255.255.255.0    11111111.11111111.11111111.00000000
+                 Wildcard: 0.0.0.255    00000000.00000000.00000000.11111111
+                                                                   ^
+                 2^8=256 (Available Address)
+                 256-2=254 (Available HOST Address) 
+                 
+                 P.S. The first address of a IP range is network number and the last address is boradcast address, 
+                 none of those address can be used by user.
 
-                ul, ol {
-                     list-style: upper-roman;
-                }
                </code>
              </pre>  
             </div> 
-          </div>     
+          </div> 
+
+          <h3 class="mt-5">Merge Final Work</h3>
+          <p>After all done, merge the new branch to master, follow code show steps: </p>
+          <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+             <pre class="hightlight">
+               <code>
+                 git branch master
+                 git merge hw2_js
+               </code>
+             </pre>  
+            </div> 
+          </div> 
+            
+            
+          
+          
             
         </div>
           
