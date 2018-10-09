@@ -187,7 +187,7 @@ $('#ipInfo').submit(function (event) {
     }else {
         var ansMin = minArr[0]+'.'+minArr[1]+'.'+minArr[2]+'.'+minArr[3];
         var ansMax = maxArr[0]+'.'+maxArr[1]+'.'+maxArr[2]+'.'+maxArr[3];
-        
+        $("#resultReturn").empty();
         $('#resultReturn').html(
             '<h5 class="mt-5">Network: '+ansMin+'/'+mask+'</h5>'+
             '<h5>Min Address: '+ansMin+'(Network)</h5>'+
