@@ -177,11 +177,18 @@ $('#ipInfo').submit(function (event) {
         $("#resultReturn").empty();
         //$('#resultReturn').html(minIP+' '+maxIP); 
         $('#resultReturn').html(
-            '<h5 class="mt-5">Network: '+minIP+'/'+mask+'</h5>'+
-            '<h5>Min Address: '+minIP+'(Network)</h5>'+
-            '<h5>Max Address: '+maxIP+'(Broadcast Address)</h5>'+
-            '<h5>Hosts Number: '+(addCalc(mask)-2)+'</h5>'+
-            '<h5>IP Type: '+ipType(ipp1,ipp2)+'</h5>'
+            //'<h5 class="mt-5">Network: '+minIP+'/'+mask+'</h5>'+
+            //'<h5>Min Address: '+minIP+'(Network)</h5>'+
+            //'<h5>Max Address: '+maxIP+'(Broadcast Address)</h5>'+
+            //'<h5>Hosts Number: '+(addCalc(mask)-2)+'</h5>'+
+            //'<h5>IP Type: '+ipType(ipp1,ipp2)+'</h5>'
+            '<ul class="list-group mt-5">'+
+                '<li class="list-group-item">Network: '+minIP+'/'+mask+'</li>'+
+                '<li class="list-group-item">Min Address: '+minIP+'(Network)</li>'+
+                '<li class="list-group-item">Max Address: '+maxIP+'(Broadcast Address)</li>'+
+                '<li class="list-group-item">Hosts Number: '+(addCalc(mask)-2)+'</li>'+
+                '<li class="list-group-item">IP Type: '+ipType(ipp1,ipp2)+'</li>'+
+            '</ul>'
         ); 
 
     }else {
@@ -189,11 +196,19 @@ $('#ipInfo').submit(function (event) {
         var ansMax = maxArr[0]+'.'+maxArr[1]+'.'+maxArr[2]+'.'+maxArr[3];
         $("#resultReturn").empty();
         $('#resultReturn').html(
-            '<h5 class="mt-5">Network: '+ansMin+'/'+mask+'</h5>'+
-            '<h5>Min Address: '+ansMin+'(Network)</h5>'+
-            '<h5>Max Address: '+ansMax+'(Broadcast Address)</h5>'+
-            '<h5>Hosts Number: '+(addCalc(mask)-2)+'</h5>'+
-            '<h5>IP Type: '+ipType(ipp1,ipp2)+'</h5>'
+            //'<h5 class="mt-5">Network: '+ansMin+'/'+mask+'</h5>'+
+            //'<h5>Min Address: '+ansMin+'(Network)</h5>'+
+            //'<h5>Max Address: '+ansMax+'(Broadcast Address)</h5>'+
+            //'<h5>Hosts Number: '+(addCalc(mask)-2)+'</h5>'+
+            //'<h5>IP Type: '+ipType(ipp1,ipp2)+'</h5>'
+
+            '<ul class="list-group mt-5">'+
+                '<li class="list-group-item">Network: '+ansMax+'/'+mask+'</li>'+
+                '<li class="list-group-item">Min Address: '+ansMin+'(Network)</li>'+
+                '<li class="list-group-item">Max Address: '+ansMax+'(Broadcast Address)</li>'+
+                '<li class="list-group-item">Hosts Number: '+(addCalc(mask)-2)+'</li>'+
+                '<li class="list-group-item">IP Type: '+ipType(ipp1,ipp2)+'</li>'+
+            '</ul>'
         );
         
     }
