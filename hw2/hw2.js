@@ -4,8 +4,8 @@
  * #CS460 HW2
  */
 
-var minArr = [0,0,0,0];
-var maxArr = [0,0,0,0];
+var minArr = undefined;
+var maxArr = undefined;
 var networkArr = [0,0,0,0];
 var minIP = undefined;
 var maxIP = undefined;
@@ -56,12 +56,12 @@ function ipRange(ip1,ip2,ip3,ip4,mask){
     var avaAddr = addCalc(mask);
     minIP = 0;
     maxIP = 0;
-    console.log('PassingInit');
+    //console.log('PassingInit');
 
     if(mask==24){
         minIP = ip1+'.'+ip2+'.'+ip3+'.'+0;
         maxIP = ip1+'.'+ip2+'.'+ip3+'.'+255; 
-        console.log('PassingFixed');
+        //console.log('PassingFixed');
     }
     if(mask==16){
         minIP = ip1+'.'+ip2+'.'+0+'.'+0;
@@ -73,11 +73,9 @@ function ipRange(ip1,ip2,ip3,ip4,mask){
     }
     if(mask>24){
         var i;
-        console.log('Passing>24');
+        //console.log('Passing>24');
         for(i = 0; i < 256; i = i + avaAddr)
         {
-             
-
             if(ip4 < i){
                 minIP = ip1+'.'+ip2+'.'+ip3+'.'+(i-avaAddr);
                 maxIP = ip1+'.'+ip2+'.'+ip3+'.'+(avaAddr-1); 
@@ -96,26 +94,26 @@ function ipRange(ip1,ip2,ip3,ip4,mask){
         var ip2B = (+ip2).toString(2);
         var ip3B = (+ip3).toString(2);
 
+        //Initial 
+        minArr = [0,0,0,0];            
+        maxArr = [255,255,255,255];
+
         if(mask<8){
-           console.log('Passing<8');
+           //console.log('Passing<8');
            var wildcard8 = 8-mask;
            minArr[0] = parseInt(binaryModify(ip1B,0,wildcard8),2); //Return as Dec
            maxArr[0] = parseInt(binaryModify(ip1B,1,wildcard8),2);
-           maxArr[1] = 255;
-           maxArr[2] = 255;
-           maxArr[3] = 255;
         }else if(mask<16 && mask >8){
-            console.log('Passing<16');
+            //console.log('Passing<16');
             var wildcard16 = 16-mask;
             minArr[0] = ip1;
             maxArr[0] = ip1;
             minArr[1] = parseInt(binaryModify(ip2B,0,wildcard16),2);
             maxArr[1] = parseInt(binaryModify(ip2B,1,wildcard16),2);
-            maxArr[2] = 255;
-            maxArr[3] = 255;
-            console.log(ip1B+"."+ip2B+"."+ip3B);
+
+            //console.log(ip1B+"."+ip2B+"."+ip3B);
         }else if(mask<24 && mask>16){
-            console.log('Passing<24');
+            //console.log('Passing<24');
             var wildcard24 = 24-mask;
             minArr[0] = ip1;
             maxArr[0] = ip1;
@@ -123,7 +121,6 @@ function ipRange(ip1,ip2,ip3,ip4,mask){
             maxArr[1] = ip2;
             minArr[2] = parseInt(binaryModify(ip3B,0,wildcard24),2);
             maxArr[2] = parseInt(binaryModify(ip3B,1,wildcard24),2);
-            maxArr[3] = 255;
         }
 
      }
@@ -151,7 +148,12 @@ function setCharAt(str,index,chr) {
 }
 
 
-
+function displayAlert(String){
+    $('#resultReturn').empty();
+    $('#resultReturn').html(
+        '<div class="col-lg-5 mt-3 alert alert-danger" role="alert">'+String+'</div>'
+    );
+}
 
 
 $('#ipInfo').submit(function (event) {
@@ -162,48 +164,57 @@ $('#ipInfo').submit(function (event) {
     var ipp3 = $('#ip3').val().trim();
     var ipp4 = $('#ip4').val().trim();
     var mask = $('#mask').val().trim();
-    console.log('Passing: '+ipp1+'.'+ipp2+'.'+ipp3+'.'+ipp4);
-    //var result = ipType(ipp1,ipp2);
-    //var number = addCalc(mask);
-    ipRange(ipp1,ipp2,ipp3,ipp4,mask);
-    //ipRange(192,168,100,1,24);
+    //console.log('Passing: '+ipp1+'.'+ipp2+'.'+ipp3+'.'+ipp4);
+
+    ipRange(ipp1,ipp2,ipp3,ipp4,mask);   //Start Calculate
+
     if(ipp1.length==0 || ipp2.length==0 || ipp3.length==0 || ipp4.length==0 || mask==0){
-        alert('Please Enter Current IP');
+        //alert('Please Enter Current IP');
+        displayAlert('Please Enter Current IP');
     }else if(ipp1>255 ||ipp2>255 || ipp3>255 || ipp4>255 || mask>32){
-        alert('IP Address Should <= 255 and Network Mask should <= 32');
+        //alert('IP Address Should <= 255 and Network Mask should <= 32');
+        displayAlert('IP Address Should <= 255 and Network Mask should <= 32');
     }else if(isNaN(ipp1+ipp2+ipp3+ipp4+mask)){
-        alert('Please Enter All Integer !');
-    }else if(mask>=24 || mask==16 || mask==24){
-        $("#resultReturn").empty();
-        //$('#resultReturn').html(minIP+' '+maxIP); 
-        $('#resultReturn').html(
-            //'<h5 class="mt-5">Network: '+minIP+'/'+mask+'</h5>'+
-            //'<h5>Min Address: '+minIP+'(Network)</h5>'+
-            //'<h5>Max Address: '+maxIP+'(Broadcast Address)</h5>'+
-            //'<h5>Hosts Number: '+(addCalc(mask)-2)+'</h5>'+
-            //'<h5>IP Type: '+ipType(ipp1,ipp2)+'</h5>'
-            '<ul class="list-group mt-5">'+
-                '<li class="list-group-item">Network: '+minIP+'/'+mask+'</li>'+
-                '<li class="list-group-item">Min Address: '+minIP+'(Network)</li>'+
-                '<li class="list-group-item">Max Address: '+maxIP+'(Broadcast Address)</li>'+
-                '<li class="list-group-item">Hosts Number: '+(addCalc(mask)-2)+'</li>'+
-                '<li class="list-group-item">IP Type: '+ipType(ipp1,ipp2)+'</li>'+
-            '</ul>'
-        ); 
+        //alert('Please Enter All Integer !');
+        displayAlert('Please Enter All Integer !');
+    }else if(mask>=24 || mask==16 || mask==24 || mask==8){
+        var hosts = addCalc(mask)-2;
+        
+        //Special Case when using /32 mask.
+        if(mask==32){
+            hosts=1;
+            
+            $("#resultReturn").empty();
+            $('#resultReturn').html(
+    
+                '<ul class="list-group mt-5">'+
+                    '<li class="list-group-item">!Special Case!</li>'+
+                    '<li class="list-group-item">Only Host:'+minIP+'</li>'+
+                '</ul>'
+            ); 
+
+        }else{
+            $("#resultReturn").empty();
+            $('#resultReturn').html(
+    
+                '<ul class="list-group mt-5">'+
+                    '<li class="list-group-item">Network: '+minIP+'/'+mask+'</li>'+
+                    '<li class="list-group-item">Min Address: '+minIP+'(Network)</li>'+
+                    '<li class="list-group-item">Max Address: '+maxIP+'(Broadcast Address)</li>'+
+                    '<li class="list-group-item">Hosts Number: '+hosts+'</li>'+
+                    '<li class="list-group-item">IP Type: '+ipType(ipp1,ipp2)+'</li>'+
+                '</ul>'
+            );
+        }
 
     }else {
         var ansMin = minArr[0]+'.'+minArr[1]+'.'+minArr[2]+'.'+minArr[3];
         var ansMax = maxArr[0]+'.'+maxArr[1]+'.'+maxArr[2]+'.'+maxArr[3];
         $("#resultReturn").empty();
         $('#resultReturn').html(
-            //'<h5 class="mt-5">Network: '+ansMin+'/'+mask+'</h5>'+
-            //'<h5>Min Address: '+ansMin+'(Network)</h5>'+
-            //'<h5>Max Address: '+ansMax+'(Broadcast Address)</h5>'+
-            //'<h5>Hosts Number: '+(addCalc(mask)-2)+'</h5>'+
-            //'<h5>IP Type: '+ipType(ipp1,ipp2)+'</h5>'
 
             '<ul class="list-group mt-5">'+
-                '<li class="list-group-item">Network: '+ansMax+'/'+mask+'</li>'+
+                '<li class="list-group-item">Network: '+ansMin+'/'+mask+'</li>'+
                 '<li class="list-group-item">Min Address: '+ansMin+'(Network)</li>'+
                 '<li class="list-group-item">Max Address: '+ansMax+'(Broadcast Address)</li>'+
                 '<li class="list-group-item">Hosts Number: '+(addCalc(mask)-2)+'</li>'+
