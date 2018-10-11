@@ -1,3 +1,5 @@
+'use strict'
+
 /**
  * IP Calculator
  * #YUMIN CHEN
@@ -6,11 +8,10 @@
 
 var minArr = undefined;
 var maxArr = undefined;
-var networkArr = [0,0,0,0];
 var minIP = undefined;
 var maxIP = undefined;
 var network = undefined;
-var ipTypr = undefined;5
+var ipTypr = undefined;
 
 /**
  * Verify IP Type(Public/Private)
@@ -18,7 +19,6 @@ var ipTypr = undefined;5
  * @param {*} ipS 2nd 8bits
  */
 function ipType(ipF, ipS){
-    'use strict'
     if(ipF == 192 && ipS == 168) {
         return 'Class C Private IP';
     }else if(ipF == 172 && ipS == 16){
@@ -170,13 +170,13 @@ $('#ipInfo').submit(function (event) {
 
     if(ipp1.length==0 || ipp2.length==0 || ipp3.length==0 || ipp4.length==0 || mask==0){
         //alert('Please Enter Current IP');
-        displayAlert('Please Enter Current IP');
+        displayAlert('You IP Address or Network Mask is NOT Corrected.');
     }else if(ipp1>255 ||ipp2>255 || ipp3>255 || ipp4>255 || mask>32){
         //alert('IP Address Should <= 255 and Network Mask should <= 32');
         displayAlert('IP Address Should <= 255 and Network Mask should <= 32');
     }else if(isNaN(ipp1+ipp2+ipp3+ipp4+mask)){
         //alert('Please Enter All Integer !');
-        displayAlert('Please Enter All Integer !');
+        displayAlert('Please Enter Integer Only!');
     }else if(mask>=24 || mask==16 || mask==24 || mask==8){
         var hosts = addCalc(mask)-2;
         
