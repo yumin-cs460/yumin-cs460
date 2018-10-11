@@ -1,5 +1,3 @@
-'use strict'
-
 /**
  * IP Calculator
  * #YUMIN CHEN
@@ -8,10 +6,11 @@
 
 var minArr = undefined;
 var maxArr = undefined;
+var networkArr = [0,0,0,0];
 var minIP = undefined;
 var maxIP = undefined;
 var network = undefined;
-var ipTypr = undefined;
+var ipTypr = undefined;5
 
 /**
  * Verify IP Type(Public/Private)
@@ -19,6 +18,7 @@ var ipTypr = undefined;
  * @param {*} ipS 2nd 8bits
  */
 function ipType(ipF, ipS){
+    'use strict'
     if(ipF == 192 && ipS == 168) {
         return 'Class C Private IP';
     }else if(ipF == 172 && ipS == 16){
@@ -147,7 +147,9 @@ function setCharAt(str,index,chr) {
     return str.substr(0,index) + chr + str.substr(index+1);
 }
 
-
+/*
+ *Display Alert 
+ */
 function displayAlert(String){
     $('#resultReturn').empty();
     $('#resultReturn').html(
@@ -155,28 +157,35 @@ function displayAlert(String){
     );
 }
 
-
+/**
+ * Trigger related method when Click
+ */
 $('#ipInfo').submit(function (event) {
     event.preventDefault();
     //get the ip address  and mask from text
-    var ipp1 = $('#ip1').val().trim();
-    var ipp2 = $('#ip2').val().trim();
-    var ipp3 = $('#ip3').val().trim();
-    var ipp4 = $('#ip4').val().trim();
-    var mask = $('#mask').val().trim();
+
+    var getIP = $('#ipAddress').val().trim();
+    var getIP2 = getIP.split(".");
+
+    var ipp1 = getIP2[0];
+    var ipp2 = getIP2[1];
+    var ipp3 = getIP2[2];
+    var ipp4 = getIP2[3];
+    var mask = $('#netMask').val().trim();
     //console.log('Passing: '+ipp1+'.'+ipp2+'.'+ipp3+'.'+ipp4);
 
     ipRange(ipp1,ipp2,ipp3,ipp4,mask);   //Start Calculate
+    
 
     if(ipp1.length==0 || ipp2.length==0 || ipp3.length==0 || ipp4.length==0 || mask==0){
         //alert('Please Enter Current IP');
-        displayAlert('You IP Address or Network Mask is NOT Corrected.');
+        displayAlert('Please Enter Correct IP or Mask');
     }else if(ipp1>255 ||ipp2>255 || ipp3>255 || ipp4>255 || mask>32){
         //alert('IP Address Should <= 255 and Network Mask should <= 32');
         displayAlert('IP Address Should <= 255 and Network Mask should <= 32');
     }else if(isNaN(ipp1+ipp2+ipp3+ipp4+mask)){
         //alert('Please Enter All Integer !');
-        displayAlert('Please Enter Integer Only!');
+        displayAlert('Please Enter All Integer !');
     }else if(mask>=24 || mask==16 || mask==24 || mask==8){
         var hosts = addCalc(mask)-2;
         

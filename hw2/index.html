@@ -33,21 +33,22 @@
         <div class="col-lg-10">
           <form id="ipInfo">
             <fieldset>
-                <legend>IP Calculator</legend>
-                IP: <input type="text" id="ip1">.
-                <input type="text" id="ip2">.
-                <input type="text" id="ip3">.
-                <input type="text" id="ip4"><br>
-                Network Mask: /<input type="text" id="mask" class="mt-2">(i.e. 24)<br>
-                <input class="btn btn-primary mt-2" type="submit" value="Submit">
-                <br />
-            </fieldset>
+            <div class="form-group">
+              <label for="ipInput">IP Address</label>
+              <input type="text" class="form-control" id="ipAddress" aria-describedby="IP" placeholder="XXX.XXX.XXX.XXX">
+            </div>
+            <div class="form-group">
+              <label for="maskInput">Network Mask</label>
+              <input type="text" class="form-control" id="netMask" placeholder="Example: 24">
+            </div>
+            <input class="btn btn-primary mt-2" type="submit" value="Submit">
+
+
           </form>
             
           <div id="resultReturn">
 			       <!-- JS Result to Here -->
-          </div>
-          
+		      </div>
         </div>
       </div>
     </div>
