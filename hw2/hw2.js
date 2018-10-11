@@ -157,6 +157,31 @@ function displayAlert(String){
     );
 }
 
+
+
+function isIP(ip) {
+    //Check Format
+    var ip = ip.split(".");
+ 
+    if (ip.length != 4) {
+        return false;
+    }
+ 
+    //Check Numbers
+    for (var c = 0; c < 4; c++) {
+        //Perform Test
+        if ( ip[c] <= -1 || ip[c] > 255 || 
+             isNaN(parseFloat(ip[c])) || 
+             !isFinite(ip[c])  || 
+             ip[c].indexOf(" ") !== -1 ) {
+ 
+             return false;
+        }
+    }
+    return true;
+}
+
+
 /**
  * Trigger related method when Click
  */
@@ -166,29 +191,31 @@ $('#ipInfo').submit(function (event) {
 
     var getIP = $('#ipAddress').val().trim();
     var getIP2 = getIP.split(".");
-
-    var ipp1 = getIP2[0];
-    var ipp2 = getIP2[1];
-    var ipp3 = getIP2[2];
-    var ipp4 = getIP2[3];
-    var mask = $('#netMask').val().trim();
-    //console.log('Passing: '+ipp1+'.'+ipp2+'.'+ipp3+'.'+ipp4);
-
-    ipRange(ipp1,ipp2,ipp3,ipp4,mask);   //Start Calculate
     
 
-    if(ipp1.length==0 || ipp2.length==0 || ipp3.length==0 || ipp4.length==0 || mask==0){
-        //alert('Please Enter Current IP');
-        displayAlert('Please Enter Correct IP or Mask');
-    }else if(ipp1>255 ||ipp2>255 || ipp3>255 || ipp4>255 || mask>32){
-        //alert('IP Address Should <= 255 and Network Mask should <= 32');
-        displayAlert('IP Address Should <= 255 and Network Mask should <= 32');
-    }else if(isNaN(ipp1+ipp2+ipp3+ipp4+mask)){
+    var ipp1 = undefined;
+    var ipp2 = undefined;
+    var ipp3 = undefined;
+    var ipp4 = undefined;
+    var mask = $('#netMask').val().trim();
+
+    if(!isIP(getIP)){
+        displayAlert('Please Enter Correct IP Address');
+    }else if(mask<1 || mask>32 || (isNaN(mask))){
         //alert('Please Enter All Integer !');
-        displayAlert('Please Enter All Integer !');
+        displayAlert('Please Enter Correct Network Mask!');
     }else if(mask>=24 || mask==16 || mask==24 || mask==8){
         var hosts = addCalc(mask)-2;
         
+        //var getIP2 = getIP.split(".");
+        
+        ipp1 = getIP2[0];
+        ipp2 = getIP2[1];
+        ipp3 = getIP2[2];
+        ipp4 = getIP2[3];
+
+        ipRange(ipp1,ipp2,ipp3,ipp4,mask);   //Start Calculate
+
         //Special Case when using /32 mask.
         if(mask==32){
             hosts=1;
@@ -217,6 +244,14 @@ $('#ipInfo').submit(function (event) {
         }
 
     }else {
+
+        ipp1 = getIP2[0];
+        ipp2 = getIP2[1];
+        ipp3 = getIP2[2];
+        ipp4 = getIP2[3];
+
+        ipRange(ipp1,ipp2,ipp3,ipp4,mask);   //Start Calculate
+
         var ansMin = minArr[0]+'.'+minArr[1]+'.'+minArr[2]+'.'+minArr[3];
         var ansMax = maxArr[0]+'.'+maxArr[1]+'.'+maxArr[2]+'.'+maxArr[3];
         $("#resultReturn").empty();
