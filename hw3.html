@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>HW3 Demo</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+
+
+    <!-- Page Content -->
+    <div class="container">
+      
+      <div class="col-lg-12">
+
+        <div class="text-left">
+          <h1 class="mt-5">CS460 HW3 Portfolio</h1>
+          <p>Yumin Chen, CS460, HW#3</p>
+          <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+             <div class="btn-group" role="group">
+             <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                HW3
+             </button>
+             <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                 <a class="dropdown-item" href="index.html">root</a>
+                 <a class="dropdown-item" href="hw1.html">HW1</a>
+                 <a class="dropdown-item" href="hw2.html">HW2</a>
+                 <a class="dropdown-item" href="hw3.html">HW3</a>
+             </div>
+             </div>
+              
+          </div>
+          <p class="mt-4">The HW3 is using C#, the main idea is to translate a program to C#, the original program was written by Java.</p>
+          <h6 class="mt-3">HW3 Github click <a href="https://github.com/yumin-cs460/cs460">HERE</a></h6>
+          
+          
+        </div>
+        <div class="text-left">
+          <h3 class="mt-5">Git Branch and .gitignore</div></h3>
+            
+          <p>First time first, create another git branch for this HW assignment and switch to the new branch. Code below show the steps:</p>
+          <div class="language-bash highlighter-rouge">
+            <div id="codebox" class="highlight">
+             <pre class="hightlight">
+               <code>
+                 git clone https://github.com/xxx/xxx.git
+                 git branch hw3          
+                 git checkout hw3
+                 git add HW3
+                 git commit -m "XXXX"
+                 git push origin hw3
+               </code>
+             </pre>  
+            </div> 
+          </div>    
+          <p>The .gitignore file specifies untracked Visual Studio files that Git should ignore. The VS gitignore templates is available on Github gitignore repositories. </p>
+
+            
+        </div>
+        <div class="text-left">
+          <h3 class="mt-5">C# and Java</h3>
+            
+          <p>Ever they look very syntax silmilar but stil they are some different. Follow table show the different:</p>
+          <div class="language-html highlighter-rouge">
+            <div class="highlight">
+                <pre class="hightlight">
+                <table class="table table-bordered col-md-6">
+                    
+                    <thead >
+                      <tr>
+                        <th scope="col">Topic</th>
+                        <th scope="col">C#</th>
+                        <th scope="col">Java</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Inheritance:</th>
+                        <td>: SystemException</td>
+                        <td>extends RuntimeException</td>
+
+                      </tr>
+                      <tr>
+                        <th scope="row">Boolean:</th>
+                        <td>bool IsEmpty()</td>
+                        <td>boolean isEmpty()</td>
+
+                      </tr>
+                      <tr>
+                        <th scope="row">Method Name:</th>
+                        <td>IsEmpty()</td>
+                        <td>isEmpty()</td>
+
+                      </tr>
+                      <tr>
+                        <th scope="row">Build-in Typenames:</th>
+                        <td>LinkedList&lt;string></td>
+                        <td>LinkedList&lt;String></td>
+
+                      </tr>
+                    </tbody>
+                  </table>  
+                </pre>
+            </div> 
+          </div> 
+
+          <h3 class="mt-5">XML Documentation Comments </h3>
+          <p>Not like Java, C# use XML for comments and the comment field is indicated by triple slashes(///). Visual Studio will also create(Off by default) a XML documentation file that included all the comments. Follow show the XML example and generated XML file.</p>
+          <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+             <pre class="hightlight">
+               <code>
+                /// &lt;summary>
+                /// Comments Test 123 
+                /// &lt;/summary>
+               </code>
+               </br>
+               <img src="xml.PNG" class="img-rounded" alt="Cinque Terre" width=40% >
+             </pre>  
+            </div> 
+          </div>
+
+          <h3 class="mt-5">Result Screenshot</h3>
+          <p>Follow show the program running screenshot using command line:</p>
+          <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+             <pre class="hightlight">
+               
+               <img src="hw3.PNG" class="img-rounded" alt="Cinque Terre" width=40% >
+             </pre>  
+            </div>
+          </div> 
+
+          <h3 class="mt-5">Merge Final Work</h3>
+          <p>After all done, merge the new branch to master and push to remote repositories, follow code show steps: </p>
+          <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+             <pre class="hightlight">
+               <code>
+                 git branch master
+                 git merge hw3
+                 git push origin master
+               </code>
+             </pre>  
+            </div> 
+          </div> 
+
+
+          
+        </div>
+          
+      </div>
+    
+        
+    </div>
+
+    
+  </body>
+
+</html>
