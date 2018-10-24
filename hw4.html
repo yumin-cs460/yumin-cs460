@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>HW4 Demo</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+
+
+    <!-- Page Content -->
+    <div class="container">
+      
+      <div class="col-lg-12">
+
+        <div class="text-left">
+          <h1 class="mt-5">CS460 HW4 Portfolio</h1>
+          <p>Yumin Chen, CS460, HW#4</HW></p>
+          <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+             <div class="btn-group" role="group">
+             <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                HW4
+             </button>
+             <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                 <a class="dropdown-item" href="index.html">root</a>
+                 <a class="dropdown-item" href="hw1.html">HW1</a>
+                 <a class="dropdown-item" href="hw2.html">HW2</a>
+                 <a class="dropdown-item" href="hw3.html">HW3</a>
+                 <a class="dropdown-item" href="#">HW4</a>
+
+             </div>
+             </div>
+              
+          </div>
+          <p class="mt-4">The HW4 is about doing basic front-end, back-end data communication using GET and POST on MVC 5 application.</p>
+          <h6 class="mt-3">HW4 Github click <a href="https://github.com/yumin-cs460/cs460">HERE</a></h6>
+          <h6 class="mt-3">Demo:</a></h6>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/hA7GpK_zdBY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          
+          
+        </div>
+        <div class="text-left">
+          <h3 class="mt-5">Git Branch and .gitignore</div></h3>
+            
+          <p>There are two branchs in this HW, one is for the Miles Converter and another one is for Color Chooser, follow screenshot show the my branchs:</p>
+          <div class="language-bash highlighter-rouge">
+            <div id="codebox" class="highlight">
+             <pre class="hightlight">
+                <img src="pic/branch.PNG" class="img-rounded" alt="Cinque Terre" width=40% >
+             </pre>  
+            </div> 
+            <p>Also the .gitignore file has been placed for ignore files.</p>
+            <div id="codebox" class="highlight">
+                <pre class="hightlight">
+                   <img src="pic/gitignore.PNG" class="img-rounded" alt="Cinque Terre" width=40% >
+                </pre>  
+            </div>
+          </div>    
+
+            
+        </div>
+        <div class="text-left">
+          <h3 class="mt-5">Razor HTML Helper</h3>
+            
+          <p>Razor help to embedding server code into View Page, use Razor style @HTML.ActionLink() to direct the navbar to right Controller and Method, Follow screenshot show my navbar configuration</p>
+          <div class="language-html highlighter-rouge">
+            <div class="highlight">
+                <pre class="hightlight">                    
+                    <img src="pic/navbar.PNG" class="img-rounded" alt="Cinque Terre" width=40% >
+                </pre>
+            </div> 
+          </div>
+          <p>Also use Razor HTML to link custom CSS and title and more for different page change dynamically.</p>
+          <div class="language-html highlighter-rouge">
+            <div class="highlight">
+                <pre class="hightlight">                    
+                    <img src="pic/css.PNG" class="img-rounded" alt="Cinque Terre" width=40% >
+                </pre>
+            </div> 
+          </div>  
+
+          <h3 class="mt-5">MVC 5 Controller and View</h3>
+          <p>There are two controllers, one is for Miles Converter and another is for Color Chooser. Also there are views for collect and result the user request. Follow show the Controller and View screenshot:</p>
+          <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+             <pre class="hightlight">
+                <img src="pic/controller.PNG" class="img-rounded" alt="Cinque Terre" width=20% >
+             </pre>  
+            </div> 
+          </div>
+
+          <h3 class="mt-5">Miles Converter and GET</h3>
+          <p>This feature will convert mile to metric, I use HTTP GET to send user input data to back-end for calculation, follow show the View code:</p>
+          <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+             <pre class="hightlight">
+               
+               <img src="pic/get.PNG" class="img-rounded" alt="Cinque Terre" width=65% >
+             </pre>  
+            </div>
+          </div>
+          <p>Follow how controller received user input,calculate and finally return the result:</p>
+          <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+             <pre class="hightlight">
+               
+               <img src="pic/getCon1.PNG" class="img-rounded" alt="Cinque Terre" width=65% >
+             </pre>  
+            </div>
+          </div> 
+
+          <h3 class="mt-5">Color Chooser and POST</h3>
+          <p>This feature will combine two color and create a new color as return. In this task, the controller use POST metho to catch user input and return result. Code below show the controller and view code: </p>
+          <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+             <pre class="hightlight">
+                <img src="pic/color1.PNG" class="img-rounded" alt="Cinque Terre" width=50% >
+             </pre>  
+            </div> 
+          </div>
+          
+          <p>After calculated the result, converted the Color object back to Hex code and then send it back to custom size div:</p>
+          <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+             <pre class="hightlight">
+                <img src="pic/color2.PNG" class="img-rounded" alt="Cinque Terre" width=50% >
+             </pre>  
+            </div> 
+          </div>
+
+          <p>Using POST, no data "send" to back-end, back-end will "ask".</p>
+          <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+             <pre class="hightlight">
+                <img src="pic/color3.PNG" class="img-rounded" alt="Cinque Terre" width=50% >
+             </pre>  
+            </div> 
+          </div>
+
+
+          
+        </div>
+          
+      </div>
+    
+        
+    </div>
+
+    
+  </body>
+
+</html>
