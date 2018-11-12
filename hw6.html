@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>HW6 Demo</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+
+
+    <!-- Page Content -->
+    <div class="container">
+      
+      <div class="col-lg-12">
+
+        <div class="text-left">
+          <h1 class="mt-5">CS460 HW6 Portfolio</h1>
+          <p>Yumin Chen, CS460, HW#6</p>
+          <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+             <div class="btn-group" role="group">
+             <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                HW6
+             </button>
+             <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                 <a class="dropdown-item" href="index.html">root</a>
+                 <a class="dropdown-item" href="hw1.html">HW1</a>
+                 <a class="dropdown-item" href="hw2.html">HW2</a>
+                 <a class="dropdown-item" href="hw3.html">HW3</a>
+                 <a class="dropdown-item" href="hw4.html">HW4</a>
+                 <a class="dropdown-item" href="hw5.html">HW5</a>
+                 <a class="dropdown-item" href="#">HW6</a>       
+             </div>
+             </div>
+              
+          </div>
+          <p class="mt-4">Building a MVC 5 web application using pre-existing database. </p>
+          <h6 class="mt-3">HW6 Github click <a href="https://github.com/yumin-cs460/cs460">HERE</a></h6>
+          <h6 class="mt-3">Demo Video:</a></h6>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/YDKvt_dQ0ds" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+        </div>
+        <div class="text-left">
+          <h3 class="mt-5">Set up the Database</div></h3>
+            
+          <p>First thing is to load pre-existing DB to SQL Server, follow show the DB in SSMS:</p>
+          <div class="language-bash highlighter-rouge">
+            <div id="codebox" class="highlight">
+             <pre class="hightlight">
+                <img src="pic/ssms-db.PNG" class="img-rounded" alt="Cinque Terre" width=20% >
+             </pre>  
+            </div> 
+            <p>After SSMS loaded the DB, connect the DB to Visual Studio:</p>
+            <div id="codebox" class="highlight">
+                <pre class="hightlight">
+                   <img src="pic/vs-db.PNG" class="img-rounded" alt="Cinque Terre" width=20% >
+                </pre>  
+            </div>
+            
+          </div>    
+
+            
+        </div>
+        <div class="text-left">
+          <h3 class="mt-5">Create Context and Model</h3>
+            
+          <p>Since DB already setup, using "Entity Framework - Code First from Existing Database" to create DB model and context file, follow show the code:</p>
+          <div class="language-html highlighter-rouge">
+            <div class="highlight">
+                <pre class="hightlight">                    
+                    <img src="pic/hw6-content.PNG" class="img-rounded" alt="Cinque Terre" width=20% >
+                </pre>
+            </div> 
+          </div>
+          <p>Since I only need few things from model, I created another model call FEViewModel to collect models, follow show the FEViewModel code:</p>
+          <div class="language-html highlighter-rouge">
+            <div class="highlight">
+                <pre class="hightlight">                    
+                    <img src="pic/hw6-custModel.PNG" class="img-rounded" alt="Cinque Terre" width=30% >
+                </pre>
+            </div> 
+          </div>
+
+
+          <h3 class="mt-5">LINQ</h3>
+          <p>Using LINQ the .NET query language to get data from DB, code show query:</p>
+          <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+             <pre class="hightlight">
+                <img src="pic/hw6-linq1.PNG" class="img-rounded" alt="Cinque Terre" width=40% >
+                <br>
+                <img src="pic/hw6-linq2.PNG" class="img-rounded" alt="Cinque Terre" width=40% >
+
+             </pre>  
+            </div> 
+          </div>
+
+          <h3 class="mt-5">UI and Map</h3>
+          <p>After user input the keyboard, the page will return the list of the name that contain the keyboard. The system will return to detail page after user click the name. Follow show the UI:</p>
+          <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+             <pre class="hightlight">
+                <img src="pic/hw6-linq1.PNG" class="img-rounded" alt="Cinque Terre" width=40% >
+          
+
+             </pre>  
+            </div> 
+          </div>
+          <p>The detail page will also contain a map for location. I used leaflet an open-source JavaScript library formaps. </p>
+          <div class="language-html highlighter-rouge">
+            <div class="highlight">
+                <pre class="hightlight">                    
+                    <img src="pic/hw6-ui2.PNG" class="img-rounded" alt="Cinque Terre" width=40% >
+                    <br/>
+                    <img src="pic/hw6-map.PNG" class="img-rounded" alt="Cinque Terre" width=40% >
+                </pre>
+            </div> 
+          </div>
+
+        </div>
+          
+      </div>
+    
+        
+    </div>
+
+    
+  </body>
+
+</html>
