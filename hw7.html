@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>HW6 Demo</title>
+    <title>HW7 Demo</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,12 +30,12 @@
       <div class="col-lg-12">
 
         <div class="text-left">
-          <h1 class="mt-5">CS460 HW6 Portfolio</h1>
-          <p>Yumin Chen, CS460, HW#6</p>
+          <h1 class="mt-5">CS460 HW7 Portfolio</h1>
+          <p>Yumin Chen, CS460, HW#7</p>
           <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
              <div class="btn-group" role="group">
              <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                HW6
+                HW7
              </button>
              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                  <a class="dropdown-item" href="index.html">root</a>
@@ -44,32 +44,30 @@
                  <a class="dropdown-item" href="hw3.html">HW3</a>
                  <a class="dropdown-item" href="hw4.html">HW4</a>
                  <a class="dropdown-item" href="hw5.html">HW5</a>
-                 <a class="dropdown-item" href="#">HW6</a>
-                 <a class="dropdown-item" href="hw7.html">HW7</a>       
+                 <a class="dropdown-item" href="hw6.html">HW6</a> 
+                 <a class="dropdown-item" href="#">HW7</a>      
              </div>
              </div>
               
           </div>
-          <p class="mt-4">Building a MVC 5 web application using pre-existing database. </p>
-          <h6 class="mt-3">HW6 Github click <a href="https://github.com/yumin-cs460/cs460">HERE</a></h6>
+          <p class="mt-4">Building a single page AJAX dynamic page using external API.</p>
+          <h6 class="mt-3">HW7 Github click <a href="https://github.com/yumin-cs460/cs460">HERE</a></h6>
           <h6 class="mt-3">Demo Video:</a></h6>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/YDKvt_dQ0ds" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/dDXTM8ZARPU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        
         </div>
         <div class="text-left">
-          <h3 class="mt-5">Set up the Database</div></h3>
-            
-          <p>First thing is to load pre-existing DB to SQL Server, follow show the DB in SSMS:</p>
+          <h3 class="mt-5">Using the API key</div></h3>
+          <p>API key is the way to get request from the API service provider, but this key is so important so here is the code for hiding the API but use it on MVC application:</p>
           <div class="language-bash highlighter-rouge">
             <div id="codebox" class="highlight">
              <pre class="hightlight">
-                <img src="pic/ssms-db.PNG" class="img-rounded" alt="Cinque Terre" width=20% >
+                <img src="pic/hw7-apikey1.PNG" class="img-rounded" alt="Cinque Terre" width=55% >
              </pre>  
             </div> 
-            <p>After SSMS loaded the DB, connect the DB to Visual Studio:</p>
+            <p>Follow code show how to use API key on MVC project:</p>
             <div id="codebox" class="highlight">
                 <pre class="hightlight">
-                   <img src="pic/vs-db.PNG" class="img-rounded" alt="Cinque Terre" width=20% >
+                   <img src="pic/hw7-apikey2.PNG" class="img-rounded" alt="Cinque Terre" width=70% >
                 </pre>  
             </div>
             
@@ -78,58 +76,43 @@
             
         </div>
         <div class="text-left">
-          <h3 class="mt-5">Create Context and Model</h3>
+          <h3 class="mt-5">JavaScript & AJAX</h3>
             
-          <p>Since DB already setup, using "Entity Framework - Code First from Existing Database" to create DB model and context file, follow show the code:</p>
+          <p>Using a external JS to send ajax request back and forth, follow show the ajax section on JS:</p>
           <div class="language-html highlighter-rouge">
             <div class="highlight">
                 <pre class="hightlight">                    
-                    <img src="pic/hw6-content.PNG" class="img-rounded" alt="Cinque Terre" width=20% >
+                    <img src="pic/hw7-ajax.PNG" class="img-rounded" alt="Cinque Terre" width=35% >
                 </pre>
             </div> 
           </div>
-          <p>Since I only need few things from model, I created another model call FEViewModel to collect models, follow show the FEViewModel code:</p>
+          <p>After process for custom method on Controller,the method return json result and call JS method to get the picture url:</p>
           <div class="language-html highlighter-rouge">
             <div class="highlight">
                 <pre class="hightlight">                    
-                    <img src="pic/hw6-custModel.PNG" class="img-rounded" alt="Cinque Terre" width=30% >
+                    <img src="pic/hw7-url.PNG" class="img-rounded" alt="Cinque Terre" width=50% >
                 </pre>
             </div> 
           </div>
 
 
-          <h3 class="mt-5">LINQ</h3>
-          <p>Using LINQ the .NET query language to get data from DB, code show query:</p>
+          <h3 class="mt-5">DB Operation</h3>
+          <p>One requirement from this project is to log user activity, follow code show the step:</p>
           <div class="language-bash highlighter-rouge">
             <div class="highlight">
              <pre class="hightlight">
-                <img src="pic/hw6-linq1.PNG" class="img-rounded" alt="Cinque Terre" width=40% >
-                <br>
-                <img src="pic/hw6-linq2.PNG" class="img-rounded" alt="Cinque Terre" width=40% >
-
+                <img src="pic/hw7-db.PNG" class="img-rounded" alt="Cinque Terre" width=40% >
              </pre>  
             </div> 
           </div>
 
-          <h3 class="mt-5">UI and Map</h3>
-          <p>After user input the keyboard, the page will return the list of the name that contain the keyboard. The system will return to detail page after user click the name. Follow show the UI:</p>
+          <h3 class="mt-5">Routing Operation</h3>
+          <p>Config the MVC routing to make custom app start route, so when the app start it start with the right page:</p>
           <div class="language-bash highlighter-rouge">
             <div class="highlight">
              <pre class="hightlight">
-                <img src="pic/hw6-ui1.PNG" class="img-rounded" alt="Cinque Terre" width=40% >
-          
-
+                <img src="pic/hw7-route.PNG" class="img-rounded" alt="Cinque Terre" width=70% >
              </pre>  
-            </div> 
-          </div>
-          <p>The detail page will also contain a map for location. I used leaflet an open-source JavaScript library formaps. </p>
-          <div class="language-html highlighter-rouge">
-            <div class="highlight">
-                <pre class="hightlight">                    
-                    <img src="pic/hw6-ui2.PNG" class="img-rounded" alt="Cinque Terre" width=40% >
-                    <br/>
-                    <img src="pic/hw6-map.PNG" class="img-rounded" alt="Cinque Terre" width=40% >
-                </pre>
             </div> 
           </div>
 
