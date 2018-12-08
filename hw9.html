@@ -55,6 +55,8 @@
           <p class="mt-4">Building a multi-pages MVC 5 , included DB, routing, AJAX/JSON.</p>
           <h6 class="mt-3">HW8 Github click <a href="https://github.com/yumin-cs460/cs460">HERE</a></h6>
           <h6 class="mt-3">Azure Demo: <a href="https://hw8cs460-yumin.azurewebsites.net/">HERE</a></h6>
+          <h6 class="mt-3">Video Demo:</h6>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/qYqXuaygPII" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
 
@@ -64,20 +66,35 @@
           <div class="language-bash highlighter-rouge">
             <div id="codebox" class="highlight">
              <pre class="hightlight">
+                 <p>First we have to create a resource group for our DB:</p>
+                 <img src="pic/azureRes.PNG" class="img-rounded" alt="Cinque Terre" width=40% >
+                 <br>
+                 <p>Then create SQl Server in that reource group:</p>
                 <img src="pic/azureDB.PNG" class="img-rounded" alt="Cinque Terre" width=55% >
                 <br>
+                <p>When first time login DB using Management Studio, the software will ask you to add a firewall rule for management.</p>
                 <img src="pic/azureDBMS.PNG" class="img-rounded" alt="Cinque Terre" width=25% >
 
              </pre>  
             </div> 
             
           </div> 
-          <h3 class="mt-5">Connection String</div></h3>
+          <h3 class="mt-5">Publish</div></h3>
           <p>Change connection string on MVC 5 Project, so the application can use Azure SQL Server instead:</p>
           <div class="language-bash highlighter-rouge">
             <div id="codebox" class="highlight">
              <pre class="hightlight">
                 <img src="pic/azureConnect.PNG" class="img-rounded" alt="Cinque Terre" width=80% >
+
+             </pre>  
+            </div> 
+            
+          </div> 
+          <p>Finally publish the app to azure server:</p>
+          <div class="language-bash highlighter-rouge">
+            <div id="codebox" class="highlight">
+             <pre class="hightlight">
+                <img src="pic/azurePublish.PNG" class="img-rounded" alt="Cinque Terre" width=50% >
 
              </pre>  
             </div> 
